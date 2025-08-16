@@ -41,6 +41,47 @@ def last_n_words(s, n=25):
 def is_csv_empty(csv_path):
     return not os.path.exists(csv_path) or os.path.getsize(csv_path) == 0
 
+from fastapi import Body
+
+@app.post("/api/json")
+async def analyze_json(payload: dict = Body(...)):
+    import uuid
+    import os
+    from fastapi.responses import JSONResponse
+    from task_engine import run_python_code
+    from gemini import parse_question_with_llm, answer_with_data
+
+    question_text = payload.get("question")
+    if not question_text:
+        return JSONResponse(status_code=400, content={"message": "Missing question field in request"})
+
+    request_id = str(uuid.uuid4())
+    request_folder = os.path.join("uploads", request_id)
+    os.makedirs(request_folder, exist_ok=True)
+
+    try:
+        response = await parse_question_with_llm(
+            question_text=question_text,
+            uploaded_files={},
+            folder=request_folder
+        )
+
+        execution_result = await run_python_code(response["code"], response["libraries"], folder=request_folder)
+        if execution_result["code"] != 1:
+            return JSONResponse({"message": "error occurred during scraping.", "details": execution_result["output"]})
+
+        gpt_ans = await answer_with_data(response["questions"], folder=request_folder)
+        final_result = await run_python_code(gpt_ans["code"], gpt_ans["libraries"], folder=request_folder)
+
+        if final_result["code"] != 1:
+            return JSONResponse({"message": "error occurred during final execution.", "details": final_result["output"]})
+
+        result_path = os.path.join(request_folder, "result.json")
+        with open(result_path, "r") as f:
+            return JSONResponse(content=json.load(f))
+
+    except Exception as e:
+        return JSONResponse({"message": "Internal Server Error", "error": str(e)})
 
 
 @app.post("/api")
