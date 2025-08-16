@@ -12,7 +12,7 @@ genai.configure(api_key=api_key)
 
 MODEL_NAME = "gemini-2.5-flash"
 
-SYSTEM_PROMPT = = f"""
+SYSTEM_PROMPT = f"""
 You are given a set of questions and a metadata description of available data.
 
 Questions:
