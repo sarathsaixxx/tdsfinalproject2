@@ -12,20 +12,36 @@ genai.configure(api_key=api_key)
 
 MODEL_NAME = "gemini-2.5-flash"
 
-SYSTEM_PROMPT = """
-You are a data extraction and analysis assistant.  
-Your job is to:
-1. Write Python code that scrapes the relevant data needed to answer the user's query.If no url are given and then see "uploads" folder and read the files provided there and give relevent metadata.
-2. List all Python libraries that need to be installed for your code to run.
-3. Identify and output the main questions that the user is asking, so they can be answered after the data is scraped.
+SYSTEM_PROMPT = = f"""
+You are given a set of questions and a metadata description of available data.
 
-You must respond **only** in valid JSON following the given schema:
-{
-  "code": "string — Python scraping code as plain text",
-  "libraries": ["string — names of required libraries"],
-  "questions": ["string — extracted questions"]
-}
-Do not include explanations, comments, or extra text outside the JSON.
+Questions:
+{question_text}
+
+Metadata:
+{metadata}
+
+Your job:
+1. Write Python code that answers the questions using the data described above.
+2. Save **all answers** as structured JSON to this file: "{folder}/result.json".
+3. If a question produces a chart/image (like a plot or network graph), convert it to **base64 PNG** and include it in the JSON like:
+   "my_chart": "<base64 PNG>"
+
+Instructions:
+- Do NOT return explanation or markdown — just code and library list.
+- Use only standard libraries + pandas, matplotlib, networkx, seaborn, numpy, etc.
+- Any images should be saved in base64 and embedded in result.json, not as separate files.
+- Output MUST be a JSON object with keys and values relevant to the question.
+
+Final output format:
+{{
+  "code": "your Python code as string",
+  "libraries": ["required", "libraries"]
+}}
+
+Make sure your code:
+- Runs successfully in one go.
+- Writes all outputs to result.json as instructed.
 """
 
 async def parse_question_with_llm(question_text, uploaded_files=None, urls=None, folder="uploads"):
