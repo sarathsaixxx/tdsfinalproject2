@@ -255,3 +255,10 @@ async def analyze(request: Request):
             f.seek(0)
             raw_content = f.read()
             return JSONResponse({"message": f"Error occured while processing result.json: {e}", "raw_result": raw_content})
+
+import os
+import uvicorn
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
