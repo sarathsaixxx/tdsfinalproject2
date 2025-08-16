@@ -23,7 +23,7 @@ metadata with links
 
 Your job:
 1. Write Python code that answers the questions using the data described above.
-2. Save **all answers** as structured JSON to this file: "{folder}/result.json".
+2. Save **all answers** as structured JSON to this file: "result.json".
 3. If a question produces a chart / image (like a plot / network graph), convert it to **base64 PNG** & include it at JSON like:
    "my_chart": "<base64 PNG>"
 
