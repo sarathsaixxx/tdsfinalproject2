@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS Data Analyst Agent | AI-Powered Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Cool Slate -->
+    <!-- Application Structure Plan: The SPA is designed as a single-page product landing page to present the "TDS Data Analyst Agent" in an engaging way. The structure flows from a high-level introduction (Hero) to key selling points (Features), a simple user guide (How it Works), technical details (Tech Stack, Deployment), and concludes with a footer. This non-linear but guided structure is more user-friendly and visually appealing than a traditional README, making it easier for users to quickly understand the tool's value and how to get started. Navigation is facilitated by a sticky header with smooth-scrolling links. -->
+    <!-- Visualization & Content Choices: Report Info: Features list -> Goal: Inform/Engage -> Presentation: Interactive cards with icons -> Interaction: Hover effects -> Justification: More visually engaging than a bullet list. | Report Info: Installation/Deployment code blocks -> Goal: Organize/Inform -> Presentation: Tabbed interface -> Interaction: Click to switch tabs, copy-to-clipboard button -> Justification: Prevents a long, intimidating wall of code and improves usability. | Report Info: Tech Stack -> Goal: Inform -> Presentation: Styled tags/pills -> Justification: More modern and scannable than a plain list. CONFIRMATION: No charts are needed as the source is a text document. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(203, 213, 225, 0.5);
+        }
+        .code-block {
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: #475569; /* slate-600 */
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .code-block:hover .copy-btn {
+            opacity: 1;
+        }
+        .tab-btn.active {
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <header id="header" class="glass-nav sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-slate-800">
+                🔮 TDS Agent
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="hover:text-indigo-600 transition-colors">Features</a>
+                <a href="#how-it-works" class="hover:text-indigo-600 transition-colors">How It Works</a>
+                <a href="#tech-stack" class="hover:text-indigo-600 transition-colors">Tech Stack</a>
+                <a href="#getting-started" class="hover:text-indigo-600 transition-colors">Get Started</a>
+            </div>
+                <a href="/test" class="hidden md:block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors" id="test-btn">
+                    Test
+                </a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-900 leading-tight">TDS Data Analyst Agent</h1>
+                <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">An AI-powered assistant that transforms your raw data and questions into actionable insights, stunning visualizations, and intelligent recommendations in seconds.</p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#getting-started" class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-transform hover:scale-105">
+                        Quick Start
+                    </a>
+                        <a href="https://github.com/23f1001849/TDS-PROJECT-2" target="_blank" class="bg-slate-200 text-slate-800 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-slate-300 transition-transform hover:scale-105">
+                            View on GitHub
+                        </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Powerful Features, Effortless Analysis</h2>
+                    <p class="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">Our agent is packed with features designed to make data analysis faster, smarter, and more accessible for everyone.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-card bg-white p-8 rounded-xl border border-slate-200">
+                        <div class="text-3xl mb-4">🤖</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">AI-Driven Analysis</h3>
+                        <p class="text-slate-600">Leverages Google's Generative AI to provide deep, contextual insights and uncover hidden patterns in your data.</p>
+                    </div>
+                    <div class="feature-card bg-white p-8 rounded-xl border border-slate-200">
+                        <div class="text-3xl mb-4">📊</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Interactive Visualizations</h3>
+                        <p class="text-slate-600">Automatically generates beautiful and informative charts and graphs using Matplotlib & Seaborn.</p>
+                    </div>
+                    <div class="feature-card bg-white p-8 rounded-xl border border-slate-200">
+                        <div class="text-3xl mb-4">🌐</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Web Scraping</h3>
+                        <p class="text-slate-600">Instantly import and analyze data directly from any URL, without the need for manual downloads.</p>
+                    </div>
+                    <div class="feature-card bg-white p-8 rounded-xl border border-slate-200">
+                        <div class="text-3xl mb-4">📁</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Multi-Format Support</h3>
+                        <p class="text-slate-600">Works seamlessly with the most popular data formats, including CSV, Excel, JSON, Parquet, and TXT files.</p>
+                    </div>
+                    <div class="feature-card bg-white p-8 rounded-xl border border-slate-200">
+                        <div class="text-3xl mb-4">⚡</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Batch Processing</h3>
+                        <p class="text-slate-600">Ask multiple questions at once and get a comprehensive report in a single, efficient run.</p>
+                    </div>
+                    <div class="feature-card bg-white p-8 rounded-xl border border-slate-200">
+                        <div class="text-3xl mb-4">💻</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Modern & Fast UI</h3>
+                        <p class="text-slate-600">A clean, responsive, and intuitive interface with real-time progress updates for a smooth user experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Get Insights in 3 Simple Steps</h2>
+                    <p class="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">Our streamlined process takes you from raw data to valuable insights with minimal effort. Here's how it works.</p>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-12">
+                    <div class="flex-1 text-center">
+                        <div class="mx-auto bg-indigo-100 text-indigo-600 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold">1</div>
+                        <h3 class="mt-6 text-xl font-semibold text-slate-800">Prepare Questions</h3>
+                        <p class="mt-2 text-slate-600">Create a simple `.txt` file listing all the questions you want to ask your data, one question per line.</p>
+                    </div>
+                    <div class="flex-1 text-center">
+                        <div class="mx-auto bg-indigo-100 text-indigo-600 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold">2</div>
+                        <h3 class="mt-6 text-xl font-semibold text-slate-800">Upload Files</h3>
+                        <p class="mt-2 text-slate-600">Upload your questions file and, optionally, your dataset in any supported format (CSV, Excel, etc.).</p>
+                    </div>
+                    <div class="flex-1 text-center">
+                        <div class="mx-auto bg-indigo-100 text-indigo-600 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold">3</div>
+                        <h3 class="mt-6 text-xl font-semibold text-slate-800">Receive Insights</h3>
+                        <p class="mt-2 text-slate-600">The agent processes your request and generates a complete report with visualizations and recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech-stack" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Built with a Modern Tech Stack</h2>
+                    <p class="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">We use powerful and reliable technologies to deliver a robust and high-performing data analysis tool.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-slate-800 mb-4 text-center md:text-left">Backend</h3>
+                        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                            <span class="bg-slate-200 text-slate-700 px-4 py-1 rounded-full font-medium">FastAPI</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-1 rounded-full font-medium">LangChain</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-1 rounded-full font-medium">Google Generative AI</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-1 rounded-full font-medium">Pandas</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-1 rounded-full font-medium">NumPy</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-1 rounded-full font-medium">Matplotlib</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-1 rounded-full font-medium">Seaborn</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-slate-800 mb-4 text-center md:text-left">Frontend</h3>
+                        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                             <span class="bg-slate-200 text-slate-700 px-4 py-1 rounded-full font-medium">HTML5</span>
+                             <span class="bg-slate-200 text-slate-700 px-4 py-1 rounded-full font-medium">CSS3 (Tailwind)</span>
+                             <span class="bg-slate-200 text-slate-700 px-4 py-1 rounded-full font-medium">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="getting-started" class="py-20 bg-slate-900 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Get Started in Minutes</h2>
+                    <p class="mt-3 text-lg text-slate-300 max-w-2xl mx-auto">Follow these instructions to set up and run the TDS Data Analyst Agent on your local machine or deploy it to production.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex justify-center border-b border-slate-700 mb-8">
+                        <button class="tab-btn active" data-tab="quickstart">Quick Start</button>
+                        <button class="tab-btn" data-tab="production">Production</button>
+                        <button class="tab-btn" data-tab="docker">Docker</button>
+                    </div>
+                    <div id="tab-content">
+                        <div id="quickstart" class="tab-pane active">
+                            <h3 class="text-2xl font-semibold mb-4">1. Install Dependencies</h3>
+                            <div class="code-block bg-slate-800 rounded-lg p-4 mb-6">
+                                <pre><code class="language-bash">pip install -r requirements.txt</code></pre>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4">2. Configure Environment</h3>
+                            <p class="text-slate-300 mb-4">Create a <code class="bg-slate-700 px-1 rounded">.env</code> file in the project root with your API key:</p>
+                            <div class="code-block bg-slate-800 rounded-lg p-4 mb-6">
+                                <pre><code class="language-bash">gemini_api_1=your_google_generative_ai_api_key
+LLM_TIMEOUT_SECONDS=150</code></pre>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4">3. Launch the App</h3>
+                            <div class="code-block bg-slate-800 rounded-lg p-4">
+                                <pre><code class="language-bash">python app.py</code></pre>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                        </div>
+                        <div id="production" class="tab-pane hidden">
+                            <p class="text-slate-300 mb-4">For production environments, we recommend using a robust server like Gunicorn:</p>
+                            <div class="code-block bg-slate-800 rounded-lg p-4">
+                                <pre><code class="language-bash">gunicorn app:app -w 4 -k uvicorn.workers.UvicornWorker</code></pre>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                        </div>
+                        <div id="docker" class="tab-pane hidden">
+                            <p class="text-slate-300 mb-4">Use the provided Dockerfile to build and run the application in a container:</p>
+                            <div class="code-block bg-slate-800 rounded-lg p-4">
+                                <pre><code class="language-dockerfile"># Build the Docker image
+docker build -t tds-agent .
+
+# Run the container
+docker run -p 8000:8000 -v $(pwd)/.env:/app/.env tds-agent</code></pre>
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 TDS Data Analyst Agent. All Rights Reserved.</p>
+            <p class="mt-2">This project is licensed under the MIT License. Feel free to use, modify, and share.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const panes = document.querySelectorAll('.tab-pane');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.getAttribute('data-tab');
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    panes.forEach(pane => {
+                        if (pane.id === target) {
+                            pane.classList.remove('hidden');
+                            pane.classList.add('active');
+                        } else {
+                            pane.classList.add('hidden');
+                            pane.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const codeBlock = button.previousElementSibling.querySelector('code');
+                    const text = codeBlock.innerText;
+                    
+                    const textarea = document.createElement('textarea');
+                    textarea.value = text;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    try {
+                        document.execCommand('copy');
+                        button.innerText = 'Copied!';
+                        setTimeout(() => {
+                            button.innerText = 'Copy';
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy text: ', err);
+                    }
+                    document.body.removeChild(textarea);
+                });
+            });
+            
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
