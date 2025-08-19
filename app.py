@@ -65,7 +65,7 @@ import time
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 # Config
-GEMINI_KEYS = ['AIzaSyDEzXJOu_F1uLg9fVi7jkBdxYtXgh8m7cw','AIzaSyAFXIXxBVL8yRr96_bzg2YvrXWaNkfd5KI']
+GEMINI_KEYS = ['AIzaSyC6pEDxqNHybznG78kofVEHWAPMMdSMzH0','AIzaSyDrI0iMJNTwQCLKvsc-Hlf039DpDHe4Sbg','AIzaSyAH9gDsubojeFXfkKQklpEaoTc3KSDOJMk','AIzaSyAh7bIF8psaOGo5nycfChTS9TT1mB1X9co','AIzaSyAHI5zbY8UzKkBcxjECqflWCda677z66Ic','AIzaSyBkawl72cy-H4uJtJ7Rzwq8fK0t01gZAjg','AIzaSyDu55eFkyA4kOtw2MC0Zg9UVQKQHoIdx0U','AIzaSyDcHXn6xS6IZgc--BGTfIInRr_gcbwgXTY','AIzaSyCvjpNLPU-Mwtjrn5xrIL_BXhE20YDTVsg','AIzaSyDe_ZBU2pHysApuRUlGTPKT8VMBN7oTf6w']
 GEMINI_KEYS = [k for k in GEMINI_KEYS if k]
 
 MODEL_HIERARCHY = [
